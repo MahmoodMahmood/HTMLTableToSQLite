@@ -1,16 +1,17 @@
-import urllib.request
-from bs4 import BeautifulSoup
 import sqlite3
+from bs4 import BeautifulSoup
+from selenium import webdriver
 
 def init_db(cur, name):
-    cur.execute("CREATE TABLE %s (DateVal TEXT PRIMARY KEY, Day TEXT,Emsak TEXT, Fajr TEXT, Shurooq TEXT, Zuhr TEXT, Asr TEXT, Maghrib TEXT, Isha TEXT)" % name)
+    cur.execute("CREATE TABLE %s (DateVal TEXT PRIMARY KEY, Day TEXT,Emsak TEXT, "
+                "Fajr TEXT, Shurooq TEXT, Zuhr TEXT, Asr TEXT, Maghrib TEXT, Isha TEXT)" % name)
 
 def convertDayToEnglish(arabicDay):
     if arabicDay == 'السبت' :
         return 'Saturday'
     elif arabicDay == 'الأحد' :
         return 'Sunday'
-    elif arabicDay == 'الإثنين' :
+    elif arabicDay == 'الإثنين':
         return 'Monday'
     elif arabicDay == 'الثلاثاء' :
         return 'Tuesday'
@@ -21,37 +22,69 @@ def convertDayToEnglish(arabicDay):
     elif arabicDay == 'الجمعة' :
         return 'Friday'
     else:
+        print (arabicDay)
         return None
+
+def isCurrentHijriMonth(table): #current month has an extra column
+    if len(table.findAll('th')) == 10:
+        return True
+    else:
+        return False
 
 db = sqlite3.connect(':memory:')
 cur = db.cursor()
 url = "https://www.awqaf.gov.ae/MonthlyPrayerTimes.aspx?lang=EN"
-htmltext = urllib.request.urlopen(url).read()
-soup =  BeautifulSoup(htmltext, "lxml")
-table = soup.find('table', {'id': 'Contents_MonthlyPrayerTimes1_GridView1'}) #this is the table we are looking for
 
-colNames = []
+browser = webdriver.Firefox()
+browser.get(url)
+
+element = browser.find_element_by_id('Contents_MonthlyPrayerTimes1_ddlMonths')
+for option in element.find_elements_by_tag_name('option'):
+    if option.text == 'Moharram':
+        option.click() # click to change months
+        break
+
+htmltext = browser.page_source
+
+soup =  BeautifulSoup(htmltext, "lxml")
+table = soup.find('table', {'id': 'Contents_MonthlyPrayerTimes1_GridView1'}) #table we are looking for
+months = soup.find('select', {'id': 'Contents_MonthlyPrayerTimes1_ddlMonths'}) #list of months
+
+options = []
 init_db(cur, 'ramadan2017AbuDhabi')#name is a tuple
 
-#for th in table.findAll('th'):
-#    colNames.append(th.text)
+for month in months.findAll('option'):
+    options.append(month)
+    print (month)
 
-for tr in table.findAll('tr')[1:]:#need to skip the first element for duplication reasons
+datesSeen = set()
+currentMonth = isCurrentHijriMonth(table) #check to ignore current hijri day
+
+for tr in table.findAll('tr'):
     arabicDay = tr.findNext('td')
     date = arabicDay.findNext('td')
-    hijriDay = date.findNext('td')
-    emsak = hijriDay.findNext('td')
+    if currentMonth: #current hijri month has an extra col we need to ignore
+        hijriDay = date.findNext('td')
+        emsak = hijriDay.findNext('td')
+    else :
+        emsak = date.findNext('td')
     fajr = emsak.findNext('td')
     shurooq = fajr.findNext('td')
     zuhr = shurooq.findNext('td')
     asr = zuhr.findNext('td')
     maghrib = asr.findNext('td')
     isha = maghrib.findNext('td')
-    row = (date.text, convertDayToEnglish(arabicDay.text), emsak.text, fajr.text, shurooq.text, zuhr.text, asr.text, maghrib.text, isha.text)
-    cur.execute("INSERT INTO ramadan2017AbuDhabi VALUES (?,?,?,?,?,?,?,?,?)", row)
-    db.commit()
 
-    #print(date)
+    #for some reason some dates are repeated, do this to avoid repeated entries
+    if date.text not in datesSeen:
+        datesSeen.add(date.text) #insert into a set for fast lookup
+        row = (date.text, convertDayToEnglish(arabicDay.text), emsak.text, fajr.text,
+               shurooq.text, zuhr.text, asr.text, maghrib.text, isha.text)
+        #print (row)
+        cur.execute("INSERT INTO ramadan2017AbuDhabi VALUES (?,?,?,?,?,?,?,?,?)", row)
+
+db.commit()
 cur.execute("SELECT * FROM ramadan2017AbuDhabi")
+
 for element in cur.fetchall():
     print (element)
