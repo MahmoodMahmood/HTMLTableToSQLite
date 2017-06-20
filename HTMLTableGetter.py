@@ -1,6 +1,7 @@
 import sqlite3
 from bs4 import BeautifulSoup
 from selenium import webdriver
+from selenium.webdriver.support.ui import Select
 
 def init_db(cur, name):
     cur.execute("CREATE TABLE %s (DateVal TEXT PRIMARY KEY, Day TEXT,Emsak TEXT, "
@@ -31,6 +32,39 @@ def isCurrentHijriMonth(table): #current month has an extra column
     else:
         return False
 
+
+def runThroughMonth(cur, htmltext):
+    #grab this month's table from the current page
+    soup = BeautifulSoup(htmltext, "lxml")
+    table = soup.find('table', {'id': 'Contents_MonthlyPrayerTimes1_GridView1'})  # table we are looking for
+
+    datesSeen = set()
+    currentMonth = isCurrentHijriMonth(table)  # check to ignore current hijri day
+
+    for tr in table.findAll('tr'):
+        arabicDay = tr.findNext('td')
+        date = arabicDay.findNext('td')
+        if currentMonth:  # current hijri month has an extra col we need to ignore
+            hijriDay = date.findNext('td')
+            emsak = hijriDay.findNext('td')
+        else:
+            emsak = date.findNext('td')
+        fajr = emsak.findNext('td')
+        shurooq = fajr.findNext('td')
+        zuhr = shurooq.findNext('td')
+        asr = zuhr.findNext('td')
+        maghrib = asr.findNext('td')
+        isha = maghrib.findNext('td')
+
+        # for some reason some dates are repeated, do this to avoid repeated entries
+        if date.text not in datesSeen:
+            datesSeen.add(date.text)  # insert into a set for fast lookup
+            row = (date.text, convertDayToEnglish(arabicDay.text), emsak.text, fajr.text,
+                   shurooq.text, zuhr.text, asr.text, maghrib.text, isha.text)
+            # print (row)
+            cur.execute("INSERT INTO AbuDhabi VALUES (?,?,?,?,?,?,?,?,?)", row)
+    return
+
 db = sqlite3.connect(':memory:')
 cur = db.cursor()
 url = "https://www.awqaf.gov.ae/MonthlyPrayerTimes.aspx?lang=EN"
@@ -39,52 +73,18 @@ browser = webdriver.Firefox()
 browser.get(url)
 
 element = browser.find_element_by_id('Contents_MonthlyPrayerTimes1_ddlMonths')
-for option in element.find_elements_by_tag_name('option'):
-    if option.text == 'Moharram':
-        option.click() # click to change months
-        break
 
-htmltext = browser.page_source
+init_db(cur, 'AbuDhabi')
 
-soup =  BeautifulSoup(htmltext, "lxml")
-table = soup.find('table', {'id': 'Contents_MonthlyPrayerTimes1_GridView1'}) #table we are looking for
-months = soup.find('select', {'id': 'Contents_MonthlyPrayerTimes1_ddlMonths'}) #list of months
-
-options = []
-init_db(cur, 'ramadan2017AbuDhabi')#name is a tuple
-
-for month in months.findAll('option'):
-    options.append(month)
-    print (month)
-
-datesSeen = set()
-currentMonth = isCurrentHijriMonth(table) #check to ignore current hijri day
-
-for tr in table.findAll('tr'):
-    arabicDay = tr.findNext('td')
-    date = arabicDay.findNext('td')
-    if currentMonth: #current hijri month has an extra col we need to ignore
-        hijriDay = date.findNext('td')
-        emsak = hijriDay.findNext('td')
-    else :
-        emsak = date.findNext('td')
-    fajr = emsak.findNext('td')
-    shurooq = fajr.findNext('td')
-    zuhr = shurooq.findNext('td')
-    asr = zuhr.findNext('td')
-    maghrib = asr.findNext('td')
-    isha = maghrib.findNext('td')
-
-    #for some reason some dates are repeated, do this to avoid repeated entries
-    if date.text not in datesSeen:
-        datesSeen.add(date.text) #insert into a set for fast lookup
-        row = (date.text, convertDayToEnglish(arabicDay.text), emsak.text, fajr.text,
-               shurooq.text, zuhr.text, asr.text, maghrib.text, isha.text)
-        #print (row)
-        cur.execute("INSERT INTO ramadan2017AbuDhabi VALUES (?,?,?,?,?,?,?,?,?)", row)
+for i in range(12): #loop through the 12 months
+    select = Select(browser.find_element_by_name('ctl00$Contents$MonthlyPrayerTimes1$ddlMonths'))
+    month = select.select_by_index(i)
+    htmltext = browser.page_source
+    runThroughMonth(cur, htmltext)  # add all the data from that month to the database
 
 db.commit()
-cur.execute("SELECT * FROM ramadan2017AbuDhabi")
 
+
+cur.execute("SELECT * FROM AbuDhabi")
 for element in cur.fetchall():
     print (element)

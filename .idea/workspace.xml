@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7224fa52-53c0-4ea1-919c-64156cfe4acb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/mah_a.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/mah_a.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HTMLTableGetter.py" afterPath="$PROJECT_DIR$/HTMLTableGetter.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geckodriver.log" afterPath="$PROJECT_DIR$/geckodriver.log" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,7 +15,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/HTMLTableGetter$AthanTableGetter.coverage" NAME="AthanTableGetter Coverage Results" MODIFIED="1497793435536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AthanTableGetter$AthanTableGetter.coverage" NAME="AthanTableGetter Coverage Results" MODIFIED="1497792461832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/HTMLTableGetter$HTMLTableGetter.coverage" NAME="HTMLTableGetter Coverage Results" MODIFIED="1497882323252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HTMLTableGetter$HTMLTableGetter.coverage" NAME="HTMLTableGetter Coverage Results" MODIFIED="1497914062287" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -29,31 +29,17 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="HTMLTableGetter.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HTMLTableGetter.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HTMLTableGetter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="81" column="40" lean-forward="false" selection-start-line="81" selection-start-column="40" selection-end-line="81" selection-end-column="40" />
+            <state relative-caret-position="328">
+              <caret line="86" column="0" lean-forward="true" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
-                <marker date="1497882323234" expanded="true" signature="118:271" ph="CREATE TABLE... missing_value" />
-                <marker date="1497882323234" expanded="true" signature="2745:2803" ph="INSERT INTO ramadan2017AbuDhabi... " />
-                <marker date="1497882323234" expanded="true" signature="2745:2809" ph="INSERT INTO ramadan2017AbuDhabi... " />
-                <marker date="1497882323234" expanded="true" signature="2837:2870" ph="SELECT * FRO... ramadan2017AbuDhabi" />
+                <marker date="1497913955872" expanded="true" signature="167:320" ph="CREATE TABLE... missing_value" />
+                <marker date="1497913955872" expanded="true" signature="2313:2360" ph="INSERT INTO AbuDhabi... " />
+                <marker date="1497913955872" expanded="true" signature="2985:3007" ph="SELECT * FRO... ramadan2017AbuDhabi" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="75">
-                <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-                <folding />
-              </first_editor>
-              <second_editor />
             </state>
           </provider>
         </entry>
@@ -82,8 +68,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/AthanTableGetter.py" />
-        <option value="$PROJECT_DIR$/HTMLTableGetter.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/HTMLTableGetter.py" />
       </list>
     </option>
   </component>
@@ -369,9 +355,9 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936978" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936978" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936978" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936978" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936978" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39952436" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -401,10 +387,9 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1497882323234" expanded="true" signature="118:271" ph="CREATE TABLE... missing_value" />
-            <marker date="1497882323234" expanded="true" signature="2745:2803" ph="INSERT INTO ramadan2017AbuDhabi... " />
-            <marker date="1497882323234" expanded="true" signature="2745:2809" ph="INSERT INTO ramadan2017AbuDhabi... " />
-            <marker date="1497882323234" expanded="true" signature="2837:2870" ph="SELECT * FRO... ramadan2017AbuDhabi" />
+            <marker date="1497913955872" expanded="true" signature="167:320" ph="CREATE TABLE... missing_value" />
+            <marker date="1497913955872" expanded="true" signature="2313:2360" ph="INSERT INTO AbuDhabi... " />
+            <marker date="1497913955872" expanded="true" signature="2985:3007" ph="SELECT * FRO... ramadan2017AbuDhabi" />
           </folding>
         </state>
       </provider>
@@ -415,10 +400,9 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1497882323234" expanded="true" signature="118:271" ph="CREATE TABLE... missing_value" />
-            <marker date="1497882323234" expanded="true" signature="2745:2803" ph="INSERT INTO ramadan2017AbuDhabi... " />
-            <marker date="1497882323234" expanded="true" signature="2745:2809" ph="INSERT INTO ramadan2017AbuDhabi... " />
-            <marker date="1497882323234" expanded="true" signature="2837:2870" ph="SELECT * FRO... ramadan2017AbuDhabi" />
+            <marker date="1497913955872" expanded="true" signature="167:320" ph="CREATE TABLE... missing_value" />
+            <marker date="1497913955872" expanded="true" signature="2313:2360" ph="INSERT INTO AbuDhabi... " />
+            <marker date="1497913955872" expanded="true" signature="2985:3007" ph="SELECT * FRO... ramadan2017AbuDhabi" />
           </folding>
         </state>
       </provider>
@@ -429,10 +413,9 @@
           <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1497882323234" expanded="true" signature="118:271" ph="CREATE TABLE... missing_value" />
-            <marker date="1497882323234" expanded="true" signature="2745:2803" ph="INSERT INTO ramadan2017AbuDhabi... " />
-            <marker date="1497882323234" expanded="true" signature="2745:2809" ph="INSERT INTO ramadan2017AbuDhabi... " />
-            <marker date="1497882323234" expanded="true" signature="2837:2870" ph="SELECT * FRO... ramadan2017AbuDhabi" />
+            <marker date="1497913955872" expanded="true" signature="167:320" ph="CREATE TABLE... missing_value" />
+            <marker date="1497913955872" expanded="true" signature="2313:2360" ph="INSERT INTO AbuDhabi... " />
+            <marker date="1497913955872" expanded="true" signature="2985:3007" ph="SELECT * FRO... ramadan2017AbuDhabi" />
           </folding>
         </state>
       </provider>
@@ -450,10 +433,9 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1497882323234" expanded="true" signature="118:271" ph="CREATE TABLE... missing_value" />
-            <marker date="1497882323234" expanded="true" signature="2745:2803" ph="INSERT INTO ramadan2017AbuDhabi... " />
-            <marker date="1497882323234" expanded="true" signature="2745:2809" ph="INSERT INTO ramadan2017AbuDhabi... " />
-            <marker date="1497882323234" expanded="true" signature="2837:2870" ph="SELECT * FRO... ramadan2017AbuDhabi" />
+            <marker date="1497913955872" expanded="true" signature="167:320" ph="CREATE TABLE... missing_value" />
+            <marker date="1497913955872" expanded="true" signature="2313:2360" ph="INSERT INTO AbuDhabi... " />
+            <marker date="1497913955872" expanded="true" signature="2985:3007" ph="SELECT * FRO... ramadan2017AbuDhabi" />
           </folding>
         </state>
       </provider>
@@ -464,10 +446,9 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1497882323234" expanded="true" signature="118:271" ph="CREATE TABLE... missing_value" />
-            <marker date="1497882323234" expanded="true" signature="2745:2803" ph="INSERT INTO ramadan2017AbuDhabi... " />
-            <marker date="1497882323234" expanded="true" signature="2745:2809" ph="INSERT INTO ramadan2017AbuDhabi... " />
-            <marker date="1497882323234" expanded="true" signature="2837:2870" ph="SELECT * FRO... ramadan2017AbuDhabi" />
+            <marker date="1497913955872" expanded="true" signature="167:320" ph="CREATE TABLE... missing_value" />
+            <marker date="1497913955872" expanded="true" signature="2313:2360" ph="INSERT INTO AbuDhabi... " />
+            <marker date="1497913955872" expanded="true" signature="2985:3007" ph="SELECT * FRO... ramadan2017AbuDhabi" />
           </folding>
         </state>
       </provider>
@@ -478,10 +459,9 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1497882323234" expanded="true" signature="118:271" ph="CREATE TABLE... missing_value" />
-            <marker date="1497882323234" expanded="true" signature="2745:2803" ph="INSERT INTO ramadan2017AbuDhabi... " />
-            <marker date="1497882323234" expanded="true" signature="2745:2809" ph="INSERT INTO ramadan2017AbuDhabi... " />
-            <marker date="1497882323234" expanded="true" signature="2837:2870" ph="SELECT * FRO... ramadan2017AbuDhabi" />
+            <marker date="1497913955872" expanded="true" signature="167:320" ph="CREATE TABLE... missing_value" />
+            <marker date="1497913955872" expanded="true" signature="2313:2360" ph="INSERT INTO AbuDhabi... " />
+            <marker date="1497913955872" expanded="true" signature="2985:3007" ph="SELECT * FRO... ramadan2017AbuDhabi" />
           </folding>
         </state>
       </provider>
@@ -492,10 +472,9 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1497882323234" expanded="true" signature="118:271" ph="CREATE TABLE... missing_value" />
-            <marker date="1497882323234" expanded="true" signature="2745:2803" ph="INSERT INTO ramadan2017AbuDhabi... " />
-            <marker date="1497882323234" expanded="true" signature="2745:2809" ph="INSERT INTO ramadan2017AbuDhabi... " />
-            <marker date="1497882323234" expanded="true" signature="2837:2870" ph="SELECT * FRO... ramadan2017AbuDhabi" />
+            <marker date="1497913955872" expanded="true" signature="167:320" ph="CREATE TABLE... missing_value" />
+            <marker date="1497913955872" expanded="true" signature="2313:2360" ph="INSERT INTO AbuDhabi... " />
+            <marker date="1497913955872" expanded="true" signature="2985:3007" ph="SELECT * FRO... ramadan2017AbuDhabi" />
           </folding>
         </state>
       </provider>
@@ -506,10 +485,9 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1497882323234" expanded="true" signature="118:271" ph="CREATE TABLE... missing_value" />
-            <marker date="1497882323234" expanded="true" signature="2745:2803" ph="INSERT INTO ramadan2017AbuDhabi... " />
-            <marker date="1497882323234" expanded="true" signature="2745:2809" ph="INSERT INTO ramadan2017AbuDhabi... " />
-            <marker date="1497882323234" expanded="true" signature="2837:2870" ph="SELECT * FRO... ramadan2017AbuDhabi" />
+            <marker date="1497913955872" expanded="true" signature="167:320" ph="CREATE TABLE... missing_value" />
+            <marker date="1497913955872" expanded="true" signature="2313:2360" ph="INSERT INTO AbuDhabi... " />
+            <marker date="1497913955872" expanded="true" signature="2985:3007" ph="SELECT * FRO... ramadan2017AbuDhabi" />
           </folding>
         </state>
       </provider>
@@ -528,20 +506,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HTMLTableGetter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="81" column="40" lean-forward="false" selection-start-line="81" selection-start-column="40" selection-end-line="81" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-            <marker date="1497882323234" expanded="true" signature="118:271" ph="CREATE TABLE... missing_value" />
-            <marker date="1497882323234" expanded="true" signature="2745:2803" ph="INSERT INTO ramadan2017AbuDhabi... " />
-            <marker date="1497882323234" expanded="true" signature="2745:2809" ph="INSERT INTO ramadan2017AbuDhabi... " />
-            <marker date="1497882323234" expanded="true" signature="2837:2870" ph="SELECT * FRO... ramadan2017AbuDhabi" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -555,6 +519,19 @@
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTMLTableGetter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="86" column="0" lean-forward="true" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1497913955872" expanded="true" signature="167:320" ph="CREATE TABLE... missing_value" />
+            <marker date="1497913955872" expanded="true" signature="2313:2360" ph="INSERT INTO AbuDhabi... " />
+            <marker date="1497913955872" expanded="true" signature="2985:3007" ph="SELECT * FRO... ramadan2017AbuDhabi" />
+          </folding>
         </state>
       </provider>
     </entry>
